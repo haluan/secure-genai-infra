@@ -1,2 +1,3 @@
 /.idea/
 secure-genai-infra.iml
+/.terraform/
