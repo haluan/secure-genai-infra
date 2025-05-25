@@ -23,6 +23,16 @@ variable "openai_custom_subdomain" {
   description = "Custom subdomain for Azure OpenAI Service"
 }
 
+variable "vnet_name" {
+  type        = string
+  description = "Name of the virtual network"
+}
+
+variable "vnet_address_space" {
+  type        = list(string)
+  description = "Address space for the virtual network"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags applied to resources"

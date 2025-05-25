@@ -13,3 +13,11 @@ module "openai_service" {
     custom_subdomain_name = var.openai_custom_subdomain
     tags                  = var.tags
 }
+
+module "virtual_network" {
+    source              = "./modules/virtual_network"
+    vnet_name           = var.vnet_name
+    resource_group_name = module.resource_group.name
+    location            = var.location
+    address_space       = var.vnet_address_space
+}
