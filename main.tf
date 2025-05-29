@@ -21,3 +21,12 @@ module "virtual_network" {
     location            = var.location
     address_space       = var.vnet_address_space
 }
+
+module "key_vault" {
+    source              = "./modules/key_vault"
+    key_vault_name      = var.key_vault_name
+    resource_group_name = module.resource_group.name
+    location            = var.location
+    tenant_id           = var.tenant_id
+    tags                = var.tags
+}
