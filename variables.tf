@@ -33,6 +33,16 @@ variable "vnet_address_space" {
   description = "Address space for the virtual network"
 }
 
+variable "key_vault_name" {
+  type        = string
+  description = "Name of the Azure Key Vault"
+}
+
+variable "tenant_id" {
+  type        = string
+  description = "Tenant ID for Azure Key Vault"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags applied to resources"

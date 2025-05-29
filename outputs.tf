@@ -9,3 +9,7 @@ output "openai_endpoint" {
 output "vnet_id" {
   value = module.virtual_network.vnet_id
 }
+
+output "key_vault_id" {
+  value = module.key_vault.key_vault_id
+}
