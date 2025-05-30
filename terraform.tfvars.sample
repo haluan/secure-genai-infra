@@ -1,0 +1,24 @@
+// This file is a sample configuration for Terraform variables.
+
+resource_group_name = "your-resource-group-name"
+location            = "your-azure-region" // e.g., "East US"
+
+openai_name             = "your-openai-service-name"
+openai_sku              = "S0" // Or your desired SKU
+openai_custom_subdomain = "your-openai-custom-subdomain"
+// openai_public_network_access_enabled = false // Uncomment to override default (false)
+// openai_allowed_virtual_network_subnet_ids = []    // Uncomment to override default ([])
+
+vnet_name             = "your-virtual-network-name"
+vnet_address_space    = ["10.0.0.0/16"] // Example address space
+subnet_name           = "your-subnet-name"
+subnet_address_prefixes = ["10.0.1.0/24"] // Example subnet prefix
+
+key_vault_name = "your-key-vault-name"
+tenant_id      = "your-azure-tenant-id"
+object_id      = "your-object-id-for-key-vault-policy" // e.g., Service Principal or User ID
+
+tags = {
+  environment = "dev"
+  project     = "secure-genai"
+}

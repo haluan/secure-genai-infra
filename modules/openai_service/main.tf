@@ -11,5 +11,15 @@ resource "azurerm_cognitive_account" "openai" {
     type = "SystemAssigned"
   }
 
+  public_network_access_enabled = var.public_network_access_enabled
+
+  dynamic "network_acls" {
+    for_each = var.public_network_access_enabled && length(var.allowed_virtual_network_subnet_ids) > 0 ? [1] : []
+    content {
+      default_action             = "Deny"
+      virtual_network_subnet_ids = var.allowed_virtual_network_subnet_ids
+    }
+  }
+
   tags = var.tags
 }
